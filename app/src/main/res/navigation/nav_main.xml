@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.intrestingfactsaboutnumber_kotlin.ui.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_getRandomFactFragment"
+            app:destination="@id/getRandomFactFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_getFactFragment"
+            app:destination="@id/getFactFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_storeFactFragment"
+            app:destination="@id/storeFactFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/getRandomFactFragment"
+        android:name="com.example.intrestingfactsaboutnumber_kotlin.ui.GetRandomFactFragment"
+        android:label="fragment_get_random_fact"
+        tools:layout="@layout/fragment_get_random_fact" >
+        <action
+            android:id="@+id/action_getRandomFactFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/getFactFragment"
+        android:name="com.example.intrestingfactsaboutnumber_kotlin.ui.GetFactFragment"
+        android:label="fragment_get_fact"
+        tools:layout="@layout/fragment_get_fact" >
+        <action
+            android:id="@+id/action_getFactFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <argument
+            android:name="number"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/storeFactFragment"
+        android:name="com.example.intrestingfactsaboutnumber_kotlin.ui.StoreFactFragment"
+        android:label="fragment_store_fact"
+        tools:layout="@layout/fragment_store_fact" >
+        <action
+            android:id="@+id/action_storeFactFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <argument
+            android:name="number"
+            app:argType="integer" />
+        <argument
+            android:name="fact"
+            app:argType="string" />
+    </fragment>
+</navigation>
